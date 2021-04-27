@@ -4,7 +4,8 @@
   "description": "Membership / Book Price Service on Audible",
   "main": "./server/index.js",
   "scripts": {
-    "react-dev": "webpack --config webpack.config.js"
+    "react-dev": "webpack --config webpack.config.js",
+    "server-dev": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,11 @@
   },
   "dependencies": {
     "babel-loader": "^8.2.2",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "sequelize": "^6.6.2"
   }
 }
