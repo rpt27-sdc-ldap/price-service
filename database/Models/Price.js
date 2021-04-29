@@ -31,6 +31,9 @@ module.exports.init = async (sequelize, Price) => {
       book_id: i,
       book_title: title,
       price: price
+    })
+    .catch(err => {
+      return;
     });
   }
   console.log('Populated Database!');
