@@ -1,6 +1,6 @@
 // model + methods for interacting with Price
 const { DataTypes } = require('sequelize');
-const sequelize = require('../index.js');
+const connection = require('../index.js');
 
 // ============ MODEL ==============
 module.exports.model = {
@@ -65,8 +65,8 @@ const populateTitle = () => {
   return titleArr.join(' ');
 };
 
-module.exports.findBookId = async (Price, bookId) => {
-  const record = await Price.findByPk(bookId);
+module.exports.findBookId = async (bookId) => {
+  const record = await connection.Price.findByPk(bookId);
   if (record === null) {
     console.log(`== find book id for ${bookId} not found!`);
     return null;
@@ -75,8 +75,8 @@ module.exports.findBookId = async (Price, bookId) => {
   }
 };
 
-module.exports.findBookTitle = async (Price, bookTitle) => {
-  const record = await Price.findOne({
+module.exports.findBookTitle = async (bookTitle) => {
+  const record = await connection.Price.findOne({
     where: {
       book_title: bookTitle
     }
