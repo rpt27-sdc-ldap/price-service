@@ -1,0 +1,91 @@
+body {
+  background-color: darkolivegreen;
+}
+
+#app {
+  border-radius: 5px;
+  width: 300px;
+  font: 18px Helvetica;
+}
+
+.priceBody {
+  margin-left: 20px;
+  margin-right: 15px;
+}
+
+#membership {
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#premiumPlus {
+  margin-top: 18px;
+  color: white;
+  font-weight: 100;
+}
+
+#premium {
+  font-weight: 500;
+  font-size: 19px;
+}
+
+#plus {
+  font-size: 19px;
+  color: orange;
+}
+
+#memberBenefits {
+  font-size: 12.75px;
+  margin-left: 26px;
+  color: white;
+  font-weight: 600;
+}
+#memberBenefits ul {
+  color: #aba4a4;
+  font-weight: 400;
+  padding-left: 0;
+}
+#memberBenefits ul li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  list-style: none;
+  background-image: url("checkmark.png");
+  background-repeat: no-repeat;
+  background-position: 0% -90%;
+  background-size: 25px;
+}
+#memberBenefits ul li:first-child {
+  margin-top: 10px;
+  background-position: 0% 50%;
+}
+#memberBenefits ul li:last-child {
+  margin-bottom: 0px;
+}
+
+.priceButton {
+  text-align: center;
+  position: relative;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 0 8px 0;
+}
+
+#memberEnroll {
+  width: 80%;
+  margin-left: 10%;
+  background-color: orange;
+  margin-bottom: 10px;
+  font-size: 12.75px;
+}
+
+#price {
+  margin-top: 7px;
+}
+
+#bookBuy {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */
