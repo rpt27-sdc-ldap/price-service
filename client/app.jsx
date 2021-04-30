@@ -49,7 +49,6 @@ class App extends React.Component {
   render() {
     return (
       <div id='app'>
-        <h1>Hello World!</h1>
         <Membership />
         <PriceButton price={this.state.currentBook.price} />
       </div>
