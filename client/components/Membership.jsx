@@ -3,7 +3,7 @@ import React from 'react';
 const Membership = () => (
   <div id='membership'>
     <div id='premiumPlus' className='priceTitle'>
-      Included with <strong>premiumPlus</strong>
+      Included with <span id='premium'>premium</span><span id='plus'>plus</span>
     </div>
     <div id='memberBenefites' className='priceBody'>
       <ul>
