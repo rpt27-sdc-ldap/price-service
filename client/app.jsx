@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import Membership from './components/Membership.jsx';
 import PriceButton from './components/PriceButton.jsx';
@@ -56,4 +55,4 @@ class App extends React.Component {
   }
 };
 
-ReactDOM.render(<App />, document.getElementById('body'));
+export default App;
