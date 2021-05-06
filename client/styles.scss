@@ -1,17 +1,20 @@
 
 // ===== GLOBAL ======
 body {
-  background-color: darkolivegreen;
+  background-color: darkslategrey;
+  overflow: scroll;
 }
 
 #app {
   border-radius: 5px;
-  width: 300px;
+  width: 315px;
+  // width: 35%;
+  float: left;
   font: 18px Helvetica;
 }
 .priceBody {
-  margin-left: 20px;
-  margin-right: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 // ===== MEMBERSHIP PRICE TITLE =====
@@ -20,31 +23,37 @@ body {
   border-radius: 5px;
 }
 #premiumPlus {
-  margin-top: 18px;
+  margin: 6% 0 6% 6%;
   color: white;
   font-weight: 100;
+  letter-spacing: -1px;
+  font-size: 20px;
 }
 #premium {
   font-weight: 500;
-  font-size: 19px;
+  font-size: 22px;
+  margin-right: 0.5%;
 }
 #plus {
-  font-size: 19px;
+  font-size: 22px;
   color: orange;
 }
 
 // ===== MEMBERSHIP BENEFITS LIST =====
 #memberBenefits {
-  font-size: 12.75px;
-  margin-left: 26px;
+  font-size: 14px;
+  margin-left: 9%;
+  margin-right: 10%;
   color: white;
   font-weight: 600;
+  letter-spacing: -0.5px;
   ul {
-    color: rgb(171, 164, 164);
+    color: rgb(194, 188, 188);
     font-weight: 400;
     padding-left: 0;
+    letter-spacing: -0.2px;
     li {
-      margin-bottom: 15px;
+      margin-bottom: 6%;
       padding-left: 30px;
       list-style: none;
       background-image: url('checkmark.png');
@@ -54,7 +63,7 @@ body {
       background-size: 25px;
     }
     li:first-child {
-      margin-top: 10px;
+      margin-top: 4%;
       background-position: 0% 50%;
     }
     li:last-child {
@@ -63,30 +72,146 @@ body {
   }
 }
 
-// ===== BUTTONS =====
+// ===== BUTTONS - ALL =====
 .priceButton {
   text-align: center;
   position: relative;
   border: none;
   border-radius: 3px;
-  padding: 10px 0 8px 0;
+  // padding: 12px 0 10px 0;
+  padding: 4% 0 3.5% 0;
 }
 
+// ===== BUTTON - MEMBERSHIP =====
 #memberEnroll {
-  width: 80%;
-  margin-left: 10%;
+  width: 85%;
+  margin-left: 7.5%;
   background-color: orange;
-  margin-bottom: 10px;
-  font-size: 12.75px;
+  margin-bottom: 22px;
+  font-size: 14px;
+}
+#memberEnroll:hover {
+  background-color:rgb(249, 196, 99);
+}
+#memberEnroll:focus {
+  border: none;
+  outline: none;
 }
 
-// ===== PRICE BUY =====
+// ===== BUTTON - PRICE BUY =====
 #price {
-  margin-top: 7px;
+  margin-top: 8px;
 }
 #bookBuy {
   color: white;
   background-color: rgba(255, 255, 255, 0.15);
   width: 100%;
 }
+#bookBuy:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+}
+#bookBuy:focus {
+  border: none;
+  outline: none;
+}
 
+// ===== MEDIA QUERIES =====
+
+@media only screen and (max-width: 895px) {
+  #premiumPlus {
+    letter-spacing: -0.2vw;
+    font-size: 2.3vw;
+  }
+  #memberBenefits {
+    font-size: 1.5vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #app {
+    width: 100%;
+    font-size: 18px;
+  }
+  #premiumPlus {
+    letter-spacing: -1px;
+    font-size: 20px;
+  }
+  #premium {
+    font-size: 22px;
+  }
+  #plus {
+    font-size: 22px;
+  }
+  #memberBenefits {
+    font-size: 14px;
+    ul {
+      li {
+        background-position: 0% 50%;
+        background-size: 25px;
+      }
+    }
+  }
+  .priceButton {
+    font-size: 14px;
+  }
+  #memberEnroll {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 315px) {
+  #app {
+    width: 100%;
+  }
+  #premiumPlus {
+    letter-spacing: -0.1rem;
+    transform:scale(0.95,1.0);
+
+  }
+}
+@media only screen and (max-width: 265px) {
+  #app {
+    width: 100%;
+  }
+  #premiumPlus {
+    letter-spacing: -0.1rem;
+    transform:scale(0.9,1.0);
+    margin-left: 2vw;
+  }
+}
+@media only screen and (max-width: 245px) {
+  #app {
+    width: 100%;
+  }
+  #premiumPlus {
+    letter-spacing: -0.1rem;
+    transform:scale(0.8,1.0);
+    margin-left: -3vw;
+  }
+}
+@media only screen and (max-width: 225px) {
+  #app {
+    width: 100%;
+  }
+  #premiumPlus {
+    letter-spacing: -0.1rem;
+    transform:scale(0.75,1.0);
+    margin-left: -7vw;
+  }
+}
+@media only screen and (max-width: 218px) {
+  #app {
+    width: 100%;
+  }
+  #premiumPlus {
+    letter-spacing: -0.1rem;
+    transform:scale(0.6,1.0);
+    margin-left: -15vw;
+    margin-right: none;
+    padding-right: none;
+  }
+}
+@media only screen and (min-width: 968px) {
+  #app {
+    width: 300px;
+  }
+}
