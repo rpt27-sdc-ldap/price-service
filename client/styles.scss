@@ -8,7 +8,6 @@ body {
 #app {
   border-radius: 5px;
   width: 315px;
-  // width: 35%;
   float: left;
   font: 18px Helvetica;
 }
@@ -23,7 +22,7 @@ body {
   border-radius: 5px;
 }
 #premiumPlus {
-  margin: 6% 0 6% 6%;
+  margin: 20px 0 14px 6%;
   color: white;
   font-weight: 100;
   letter-spacing: -1px;
@@ -42,8 +41,7 @@ body {
 // ===== MEMBERSHIP BENEFITS LIST =====
 #memberBenefits {
   font-size: 14px;
-  margin-left: 9%;
-  margin-right: 10%;
+  margin: 0 10% 25px 9%;
   color: white;
   font-weight: 600;
   letter-spacing: -0.5px;
@@ -58,7 +56,6 @@ body {
       list-style: none;
       background-image: url('checkmark.png');
       background-repeat: no-repeat;
-      // background-position: left center;
       background-position: 0% -90%;
       background-size: 25px;
     }
@@ -78,7 +75,6 @@ body {
   position: relative;
   border: none;
   border-radius: 3px;
-  // padding: 12px 0 10px 0;
   padding: 4% 0 3.5% 0;
 }
 
@@ -87,7 +83,6 @@ body {
   width: 85%;
   margin-left: 7.5%;
   background-color: orange;
-  margin-bottom: 22px;
   font-size: 14px;
 }
 #memberEnroll:hover {
