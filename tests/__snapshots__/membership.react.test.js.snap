@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Membership should render my component 1`] = `
+Array [
+  <div
+    id="membership"
+  >
+    <div
+      className="priceBody"
+      id="premiumPlus"
+    >
+      Included with 
+      <span
+        id="premium"
+      >
+        premium
+      </span>
+      <span
+        id="plus"
+      >
+        plus
+      </span>
+    </div>
+    <div
+      className="priceBody"
+      id="memberBenefits"
+    >
+      You'll have access to these benefits
+      <ul>
+        <li>
+          1 audiobook of your choice.
+        </li>
+        <li>
+          Stream or download thousands of included titles.
+        </li>
+        <li>
+          $14.95 a month after 30 day trial. Cancel anytime.
+        </li>
+      </ul>
+    </div>
+    <button
+      className="priceButton"
+      id="memberEnroll"
+    >
+      Continue for free
+    </button>
+  </div>,
+]
+`;
