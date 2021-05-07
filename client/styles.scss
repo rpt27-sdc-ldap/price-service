@@ -118,6 +118,7 @@ body {
 
 // ===== MEDIA QUERIES =====
 
+// 2nd largest screen setting - less spacing and smaller letters
 @media only screen and (max-width: 895px) {
   #premiumPlus {
     letter-spacing: -0.2vw;
@@ -127,6 +128,7 @@ body {
     font-size: 1.5vw;
   }
 }
+// iPad size screen - take full screen width and larger fonts
 @media only screen and (max-width: 768px) {
   #app {
     width: 100%;
@@ -158,6 +160,7 @@ body {
     font-size: 14px;
   }
 }
+// iPhones - compress premiumPlus title in x direction
 @media only screen and (max-width: 315px) {
   #app {
     width: 100%;
@@ -168,6 +171,7 @@ body {
 
   }
 }
+// further premiumPlus compression
 @media only screen and (max-width: 265px) {
   #app {
     width: 100%;
@@ -178,6 +182,7 @@ body {
     margin-left: 2vw;
   }
 }
+// further premiumPlus compression
 @media only screen and (max-width: 245px) {
   #app {
     width: 100%;
@@ -188,6 +193,7 @@ body {
     margin-left: -3vw;
   }
 }
+// further premiumPlus compression
 @media only screen and (max-width: 225px) {
   #app {
     width: 100%;
@@ -198,6 +204,7 @@ body {
     margin-left: -7vw;
   }
 }
+// further premiumPlus compression
 @media only screen and (max-width: 218px) {
   #app {
     width: 100%;
@@ -210,6 +217,8 @@ body {
     padding-right: none;
   }
 }
+
+// largest screen setting - fixed width
 @media only screen and (min-width: 968px) {
   #app {
     width: 300px;
