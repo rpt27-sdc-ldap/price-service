@@ -1,0 +1,226 @@
+
+// ===== GLOBAL ======
+body {
+  background-color: darkslategrey;
+  overflow: scroll;
+}
+
+#app {
+  border-radius: 5px;
+  width: 315px;
+  // width: 35%;
+  float: left;
+  font: 18px Helvetica;
+}
+.priceBody {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+// ===== MEMBERSHIP PRICE TITLE =====
+#membership {
+  border: 1px solid white;
+  border-radius: 5px;
+}
+#premiumPlus {
+  margin: 6% 0 6% 6%;
+  color: white;
+  font-weight: 100;
+  letter-spacing: -1px;
+  font-size: 20px;
+}
+#premium {
+  font-weight: 500;
+  font-size: 22px;
+  margin-right: 0.5%;
+}
+#plus {
+  font-size: 22px;
+  color: orange;
+}
+
+// ===== MEMBERSHIP BENEFITS LIST =====
+#memberBenefits {
+  font-size: 14px;
+  margin-left: 9%;
+  margin-right: 10%;
+  color: white;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  ul {
+    color: rgb(194, 188, 188);
+    font-weight: 400;
+    padding-left: 0;
+    letter-spacing: -0.2px;
+    li {
+      margin-bottom: 6%;
+      padding-left: 30px;
+      list-style: none;
+      background-image: url('checkmark.png');
+      background-repeat: no-repeat;
+      // background-position: left center;
+      background-position: 0% -90%;
+      background-size: 25px;
+    }
+    li:first-child {
+      margin-top: 4%;
+      background-position: 0% 50%;
+    }
+    li:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+// ===== BUTTONS - ALL =====
+.priceButton {
+  text-align: center;
+  position: relative;
+  border: none;
+  border-radius: 3px;
+  // padding: 12px 0 10px 0;
+  padding: 4% 0 3.5% 0;
+}
+
+// ===== BUTTON - MEMBERSHIP =====
+#memberEnroll {
+  width: 85%;
+  margin-left: 7.5%;
+  background-color: orange;
+  margin-bottom: 22px;
+  font-size: 14px;
+}
+#memberEnroll:hover {
+  background-color:rgb(249, 196, 99);
+}
+#memberEnroll:focus {
+  border: none;
+  outline: none;
+}
+
+// ===== BUTTON - PRICE BUY =====
+#price {
+  margin-top: 8px;
+}
+#bookBuy {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 100%;
+}
+#bookBuy:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+}
+#bookBuy:focus {
+  border: none;
+  outline: none;
+}
+
+// ===== MEDIA QUERIES =====
+
+// 2nd largest screen setting - less spacing and smaller letters
+@media only screen and (max-width: 895px) {
+  #premiumPlus {
+    letter-spacing: -0.2vw;
+    font-size: 2.3vw;
+  }
+  #memberBenefits {
+    font-size: 1.5vw;
+  }
+}
+// iPad size screen - take full screen width and larger fonts
+@media only screen and (max-width: 768px) {
+  #app {
+    width: 100%;
+    font-size: 18px;
+  }
+  #premiumPlus {
+    letter-spacing: -1px;
+    font-size: 20px;
+  }
+  #premium {
+    font-size: 22px;
+  }
+  #plus {
+    font-size: 22px;
+  }
+  #memberBenefits {
+    font-size: 14px;
+    ul {
+      li {
+        background-position: 0% 50%;
+        background-size: 25px;
+      }
+    }
+  }
+  .priceButton {
+    font-size: 14px;
+  }
+  #memberEnroll {
+    font-size: 14px;
+  }
+}
+// iPhones - compress premiumPlus title in x direction
+@media only screen and (max-width: 315px) {
+  #app {
+    width: 100%;
+  }
+  #premiumPlus {
+    letter-spacing: -0.1rem;
+    transform:scale(0.95,1.0);
+
+  }
+}
+// further premiumPlus compression
+@media only screen and (max-width: 265px) {
+  #app {
+    width: 100%;
+  }
+  #premiumPlus {
+    letter-spacing: -0.1rem;
+    transform:scale(0.9,1.0);
+    margin-left: 2vw;
+  }
+}
+// further premiumPlus compression
+@media only screen and (max-width: 245px) {
+  #app {
+    width: 100%;
+  }
+  #premiumPlus {
+    letter-spacing: -0.1rem;
+    transform:scale(0.8,1.0);
+    margin-left: -3vw;
+  }
+}
+// further premiumPlus compression
+@media only screen and (max-width: 225px) {
+  #app {
+    width: 100%;
+  }
+  #premiumPlus {
+    letter-spacing: -0.1rem;
+    transform:scale(0.75,1.0);
+    margin-left: -7vw;
+  }
+}
+// further premiumPlus compression
+@media only screen and (max-width: 218px) {
+  #app {
+    width: 100%;
+  }
+  #premiumPlus {
+    letter-spacing: -0.1rem;
+    transform:scale(0.6,1.0);
+    margin-left: -15vw;
+    margin-right: none;
+    padding-right: none;
+  }
+}
+
+// largest screen setting - fixed width
+@media only screen and (min-width: 968px) {
+  #app {
+    width: 300px;
+  }
+}

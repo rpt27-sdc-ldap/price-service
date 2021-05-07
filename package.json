@@ -4,8 +4,9 @@
   "description": "Membership / Book Price Service on Audible",
   "main": "./server/index.js",
   "scripts": {
-    "react-dev": "webpack --config webpack.config.js",
-    "server-dev": "nodemon server/index.js"
+    "react-dev": "webpack",
+    "server-dev": "nodemon server/index.js",
+    "sass-dev": "sass --watch client/styles.scss public/styles.css"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "nodemon": "^2.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "sass": "^1.32.12",
     "sequelize": "^6.6.2"
   }
 }
