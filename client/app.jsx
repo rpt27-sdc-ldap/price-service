@@ -12,11 +12,16 @@ class App extends React.Component {
   }
 
   generateRandomBookByIdOrTitle() {
-    const randomBookId = Math.floor(Math.random() * 100);
-    const bookTitle = encodeURIComponent('Of Journey My Lead And Begin');
-    const paramToSet = Math.random() < 0.5 ? `bookId=${randomBookId}` : `bookTitle=${bookTitle}`;
-    let newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?${paramToSet}`;
-    window.history.pushState({ path: newUrl }, '', newUrl);
+    const params = document.location.search.substr(1);
+    if (params.includes('bookId') || params.includes('bookTitle')) {
+      return;
+    } else {
+      const randomBookId = Math.floor(Math.random() * 100);
+      const bookTitle = encodeURIComponent('Of Journey My Lead And Begin');
+      const paramToSet = Math.random() < 0.5 ? `bookId=${randomBookId}` : `bookTitle=${bookTitle}`;
+      let newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?${paramToSet}`;
+      window.history.pushState({ path: newUrl }, '', newUrl);
+    }
   }
 
   getPrice() {
