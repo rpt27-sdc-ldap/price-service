@@ -15,14 +15,14 @@ const initDB = async () => {
 initDB()
   .then(() => {
     const sequelize = new Sequelize('audible_price', 'root', null, {
-      dialect: 'mysql'
+      dialect: 'mysql',
+      logging: false
     });
     module.exports.sequelize = sequelize;
     return sequelize;
   })
   .then( async (sequelize) => {
     await sequelize.authenticate();
-    console.log('Mysql Connection has been established!');
     return sequelize;
   })
   .then( async (sequelize) => {
@@ -30,7 +30,6 @@ initDB()
       timestamps: false
     });
     await sequelize.sync();
-    console.log('Price Table Initialized!');
     module.exports.Price = Price;
     return { Price: Price, sequelize: sequelize };
   })

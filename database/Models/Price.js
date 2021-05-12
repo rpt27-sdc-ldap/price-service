@@ -22,7 +22,6 @@ module.exports.model = {
 module.exports.init = async (sequelize, Price) => {
   // seed table with psuedo-random data
   await sequelize.sync();
-  console.log('Price Table Initialized!');
 
   for (let i = 0; i < 100; i++) {
     const price = populatePrice();
@@ -36,7 +35,6 @@ module.exports.init = async (sequelize, Price) => {
       return;
     });
   }
-  console.log('Populated Database!');
 };
 
 const populatePrice = () => {
