@@ -16,7 +16,10 @@
     "react-dev": "webpack",
     "server-dev": "nodemon server/index.js",
     "sass-dev": "sass --watch client/styles.scss public/styles.css",
-    "test": "cross-env NODE_ENV=test jest"
+    "test": "cross-env NODE_ENV=test jest",
+    "commit": "git commit",
+    "lint": "eslint . --ext .js,.jsx",
+    "pre-commit": "lint-staged && npm run test"
   },
   "repository": {
     "type": "git",
