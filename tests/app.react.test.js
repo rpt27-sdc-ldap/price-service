@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import App from '../client/app.jsx';
 import Membership from '../client/components/Membership.jsx';
 import PriceButton from '../client/components/PriceButton.jsx';

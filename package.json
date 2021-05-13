@@ -16,7 +16,7 @@
     "react-dev": "webpack",
     "server-dev": "nodemon server/index.js",
     "sass-dev": "sass --watch client/styles.scss public/styles.css",
-    "test": "jest"
+    "test": "NODE_ENV=test jest"
   },
   "repository": {
     "type": "git",
@@ -40,8 +40,10 @@
     "jest": "^26.6.3",
     "jest-enzyme": "^7.1.2",
     "react-test-renderer": "^17.0.2",
+    "sequelize-mock": "^0.10.2",
     "sinon": "^10.0.0",
     "style-loader": "^2.0.0",
+    "supertest": "^6.1.3",
     "webpack": "^5.35.1",
     "webpack-cli": "^4.6.0"
   },
