@@ -8,3 +8,4 @@ fetch.mockResponse(JSON.stringify({ bookId: 1, bookTitle: 'jest test', price: 24
 
 configure({ adapter: new Adapter() });
 
+require('mysql2/node_modules/iconv-lite').encodingExists('foo');

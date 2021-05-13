@@ -16,7 +16,7 @@
     "react-dev": "webpack",
     "server-dev": "nodemon server/index.js",
     "sass-dev": "sass --watch client/styles.scss public/styles.css",
-    "test": "NODE_ENV=test jest"
+    "test": "cross-env NODE_ENV=test jest"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
     "babel-jest": "^26.6.3",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.2.4",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
