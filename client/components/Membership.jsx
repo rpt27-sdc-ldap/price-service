@@ -6,7 +6,6 @@ const Membership = () => (
       Included with <span id='premium'>premium</span><span id='plus'>plus</span>
     </div>
     <div id='memberBenefits' className='priceBody'>
-      You'll have access to these benefits
       <ul>
         <li>1 audiobook of your choice.</li>
         <li>Stream or download thousands of included titles.</li>
