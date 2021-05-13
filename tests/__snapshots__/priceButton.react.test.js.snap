@@ -15,19 +15,3 @@ Array [
   </div>,
 ]
 `;
-
-exports[`PriceButton should render my component 1`] = `
-Array [
-  <div
-    id="price"
-  >
-    <button
-      className="priceButton"
-      id="bookBuy"
-    >
-      Buy for $
-      
-    </button>
-  </div>,
-]
-`;
