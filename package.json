@@ -63,6 +63,7 @@
   },
   "dependencies": {
     "babel-loader": "^8.2.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "jest-fetch-mock": "^3.0.3",
     "mysql2": "^2.2.5",
