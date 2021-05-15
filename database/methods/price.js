@@ -1,5 +1,5 @@
 // =========== METHODS ==============
-module.exports.init = async (sequelize, Price) => {
+const init = async (sequelize, Price) => {
   // seed table with psuedo-random data
   await sequelize.sync();
 
@@ -43,7 +43,7 @@ const populateTitle = () => {
   return titleArr.join(' ');
 };
 
-module.exports.findBookId = async (Price, bookId) => {
+const findBookId = async (Price, bookId) => {
   const record = await Price.findByPk(bookId);
   if (record === null) {
     console.log(`== find book id for ${bookId} not found!`);
@@ -53,7 +53,7 @@ module.exports.findBookId = async (Price, bookId) => {
   }
 };
 
-module.exports.findBookTitle = async (Price, bookTitle) => {
+const findBookTitle = async (Price, bookTitle) => {
   const record = await Price.findOne({
     where: {
       book_title: bookTitle
@@ -65,4 +65,10 @@ module.exports.findBookTitle = async (Price, bookTitle) => {
   } else {
     return record;
   }
+};
+
+module.exports = {
+  findBookTitle,
+  findBookId,
+  init
 };

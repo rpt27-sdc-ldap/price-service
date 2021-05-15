@@ -17,6 +17,7 @@ const init = async () => {
     dialect: 'mysql',
     logging: false
   });
+  db.sequelize = sequelize;
 
   db.Price = require('./Models/Price.js')(sequelize);
 

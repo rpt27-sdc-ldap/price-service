@@ -10,14 +10,3 @@ Array [
   </div>,
 ]
 `;
-
-exports[`PriceButton should render my component 1`] = `
-Array [
-  <div
-    id="app"
-  >
-    <Membership />
-    <PriceButton />
-  </div>,
-]
-`;
