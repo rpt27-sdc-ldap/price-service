@@ -38,6 +38,5 @@ module.exports = {
     filename: 'priceBundle.js',
     path: path.resolve(__dirname, 'public')
   },
-  mode: 'production',
-  watch: true
+  mode: 'production'
 };
