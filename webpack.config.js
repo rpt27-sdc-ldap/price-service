@@ -1,4 +1,6 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, '/client/index.js'),
@@ -12,7 +14,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-      }
+      },
     ]
   },
   resolve: {
@@ -21,6 +23,17 @@ module.exports = {
       '.jsx'
     ]
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: 'client/assets/checkmark.png', to: ''},
+      ]
+    }),
+    new HtmlWebpackPlugin({
+      template: 'client/assets/index.html',
+      title: 'index.html'
+    }),
+  ],
   output: {
     filename: 'priceBundle.js',
     path: path.resolve(__dirname, 'public')
