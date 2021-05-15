@@ -11,21 +11,28 @@ class App extends React.Component {
     };
   }
 
-  setParam() {
-    const bookId = Math.floor(Math.random() * 100);
-    const bookTitle = encodeURIComponent('Of Journey My Lead And Begin');
-    const param = Math.random() < 0.5 ? `bookId=${bookId}` : `bookTitle=${bookTitle}`;
-    let newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?${param}`;
-    window.history.pushState({ path: newUrl }, '', newUrl);
+  generateRandomBookByIdOrTitle() {
+    const params = document.location.search.substr(1);
+    if (params.includes('bookId') || params.includes('bookTitle')) {
+      return;
+    } else {
+      const randomBookId = Math.floor(Math.random() * 100);
+      const bookTitle = encodeURIComponent('Of Journey My Lead And Begin');
+      const paramToSet = Math.random() < 0.5 ? `bookId=${randomBookId}` : `bookTitle=${bookTitle}`;
+      let newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?${paramToSet}`;
+      window.history.pushState({ path: newUrl }, '', newUrl);
+    }
   }
 
   getPrice() {
     let params = document.location.search.substr(1).split('&');
 
+    // split up parameters into tuples with [key, value] schema
     params.forEach((item, i) => {
       params[i] = item.split('=');
     });
 
+    // loop through parameters individually
     for (let param of params) {
       if (param[0] === 'bookId' || param[0] === 'bookTitle') {
         fetch(`http://localhost:3000/api/price/${param[1]}`)
@@ -41,7 +48,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setParam();
+    this.generateRandomBookByIdOrTitle();
     this.getPrice();
   }
 
