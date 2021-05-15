@@ -3,4 +3,4 @@ import React from 'react';
 
 import App from './app.jsx';
 
-ReactDOM.render(<App />, document.getElementById('body'));
+ReactDOM.render(<App />, document.getElementById('price-service'));
