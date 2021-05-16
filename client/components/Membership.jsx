@@ -7,8 +7,9 @@ const Membership = () => (
     </div>
     <button className='priceButton priceBody' id='memberEnroll'>Try for $0.00</button>
     <div id='memberBenefits' className='priceBody'>
+      <span id='benefitTitle'>You'll have access to these benefits</span>
       <ul>
-        <li>1 audiobook of your choice.</li>
+        <li>1 premium selection title of your choice.</li>
         <li>Stream or download thousands of included titles.</li>
         <li>$14.95 a month after 30 day trial. Cancel anytime.</li>
       </ul>

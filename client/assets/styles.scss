@@ -40,13 +40,13 @@ body {
 
 // ===== MEMBERSHIP BENEFITS LIST =====
 #memberBenefits {
-  font-size: 14px;
+  font-size: 13px;
   margin: 0 10% 25px 9%;
-  color: white;
-  font-weight: 600;
+  color: rgb(194, 188, 188);  font-weight: 600;
   letter-spacing: -0.5px;
+  margin-top: 8px;
   ul {
-    color: rgb(194, 188, 188);
+    font-size: 14px;
     font-weight: 400;
     padding-left: 0;
     letter-spacing: -0.2px;
