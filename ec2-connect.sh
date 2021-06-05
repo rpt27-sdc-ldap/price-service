@@ -1,0 +1,1 @@
+ssh -i "/Users/mackenzie/Documents/HackReactor/FEC/price-service/rpt27-price-service.pem" ec2-user@ec2-34-221-235-141.us-west-2.compute.amazonaws.com
