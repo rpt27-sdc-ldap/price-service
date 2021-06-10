@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const BrotliPlugin = require('brotli-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, '/client/index.js'),
@@ -45,6 +46,12 @@ module.exports = {
       template: 'client/assets/index.html',
       title: 'index.html'
     }),
+    new BrotliPlugin({
+      asset: '[path][base].br',
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    })
   ],
   output: {
     filename: 'priceBundle.js',

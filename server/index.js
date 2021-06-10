@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const shrinkRay = require('shrink-ray-current');
+const expressStaticGzip = require('express-static-gzip');
 const Price = require('../database/index.js');
 const db = require('../database/methods/price.js');
 const app = express();
@@ -18,9 +18,11 @@ const corsOpts = {
   }
 };
 
-app.use(express.static(path.join(__dirname, '..', '/public')));
+// app.use(express.static(path.join(__dirname, '..', '/public')));
+app.use('/', expressStaticGzip(path.join(__dirname, '..', '/public'), {
+  enableBrotli: true
+}));
 app.use(cors());
-app.use(shrinkRay());
 
 app.get('/', (req, res) => {
   res.end();
