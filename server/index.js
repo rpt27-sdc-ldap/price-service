@@ -28,14 +28,26 @@ app.get('/', (req, res) => {
   res.end();
 });
 
-app.get('/api/price/:bookId(\\d+)', async (req, res) => {
-  const book = await db.findBookId(Price.Price, req.params.bookId);
-  res.send(JSON.stringify(book.dataValues));
+app.get('/api/price/:bookId(\\d+)', (req, res) => {
+  db.findBookId(Price.Price, req.params.bookId)
+    .then(book => {
+      res.send(JSON.stringify(book.dataValues));
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(404).send('failed to find resource');
+    });
 });
 
-app.get('/api/price/:bookTitle', async (req, res) => {
-  const book = await db.findBookTitle(Price.Price, req.params.bookTitle);
-  res.send(JSON.stringify(book.dataValues));
+app.get('/api/price/:bookTitle', (req, res) => {
+  const book = db.findBookTitle(Price.Price, req.params.bookTitle)
+    .then(book => {
+      res.send(JSON.stringify(book.dataValues));
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(404).send('failed to find resource');
+    });
 });
 
 if (process.env.NODE_ENV !== 'test') {
