@@ -17,6 +17,12 @@ Membership / Book Price Service on Audible
 ## 1.2 Usage
 The Price Service a component of a larger project to create a look-alike Audible Item Page built with a Service-Oriented Architecture. Price Service is a fullstack service that provides the price and membership information for an Audible item page.
 
+Technologies Used:
+- React
+- Node.js
+- Express
+- MySQL
+
 ![Price Service Demo](./readmeAssets/priceService-demo.png)
 
 - Within the Item Page
