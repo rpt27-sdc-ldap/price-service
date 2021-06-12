@@ -44,7 +44,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'client/assets/index.html',
       title: 'index.html'
-    }),
+    })
   ],
   output: {
     filename: 'priceBundle.js',

@@ -6,14 +6,24 @@ const methods = require('./methods/price.js');
 let db = {};
 
 const init = async () => {
+  // const connection = await mysql.createConnection({
+  //   host: 'localhost',
+  //   user: 'root'
+  // });
+
   const connection = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root'
+    host: 'ec2-34-221-235-141.us-west-2.compute.amazonaws.com',
+    password: process.env.DB_PASS,
+    user: process.env.DB_USER
   });
 
   await connection.query('CREATE DATABASE IF NOT EXISTS `audible_price`;');
 
-  const sequelize = new Sequelize('audible_price', 'root', null, {
+  // const sequelize = new Sequelize('audible_price', 'root', null, {
+  //   dialect: 'mysql',
+  //   logging: false
+  // });
+  const sequelize = new Sequelize('audible_price', process.env.DB_USER, process.env.DB_PASS, {
     dialect: 'mysql',
     logging: false
   });
