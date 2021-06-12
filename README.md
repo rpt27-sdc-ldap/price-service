@@ -2,17 +2,17 @@
 Membership / Book Price Service on Audible
 
 ## Table of Contents
--[1.1 Related Projects](#11-related-projects)
--[1.2 Usage ](#12-usage)
--[1.3 Requirements / Set Up](#13-requirements--set-up)
--[1.4 Backlog / Noted Opportunities](#14-backlog--noted-opportunies)
+- [1.1 Related Projects](#11-related-projects)
+- [1.2 Usage ](#12-usage)
+- [1.3 Requirements / Set Up](#13-requirements--set-up)
+- [1.4 Backlog / Noted Opportunities](#14-backlog--noted-opportunies)
 
 ## 1.1 Related Projects
-[- Title Service](https://github.com/huang-pei-mei/title-service)
-[- Also Enjoyed Service](https://github.com/huang-pei-mei/also-enjoyed-service)
-[- Summary Service](https://github.com/huang-pei-mei/FEC-Publishers-Summary)
-[- Aggregate Review Service](https://github.com/huang-pei-mei/FEC-Agg.Review)
-[- Review Service](https://github.com/huang-pei-mei/reviews-service)
+- [Title Service](https://github.com/huang-pei-mei/title-service)
+- [Also Enjoyed Service](https://github.com/huang-pei-mei/also-enjoyed-service)
+- [Summary Service](https://github.com/huang-pei-mei/FEC-Publishers-Summary)
+- [Aggregate Review Service](https://github.com/huang-pei-mei/FEC-Agg.Review)
+- [Review Service](https://github.com/huang-pei-mei/reviews-service)
 
 ## 1.2 Usage
 The Price Service is a fullstack service that provides the price and membership information for an Audible item page.
