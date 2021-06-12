@@ -15,16 +15,26 @@ Membership / Book Price Service on Audible
 - [Review Service](https://github.com/huang-pei-mei/reviews-service)
 
 ## 1.2 Usage
-The Price Service is a fullstack service that provides the price and membership information for an Audible item page.
+The Price Service a component of a larger project to create a look-alike Audible Item Page built with a Service-Oriented Architecture. Price Service is a fullstack service that provides the price and membership information for an Audible item page.
 
 ![Price Service Demo](./readmeAssets/priceService-demo.png)
 
+- Within the Item Page
+
+![Audible Item Page](./readmeAssets/audible_proxy.gif)
+
+![Audible Item Page Mobile](./readmeAssets/audible_proxy_mobile.gif)
 
 ### 1.2.1 API Endpoints
 - GET `/api/price/:bookId`
   - Given a `bookId`, retrieve its price.
 - GET `/api/price/:bookTitle`
   - Given a `bookTitle`, retrieve its price.
+
+
+### 1.2.2 Deployed Web Address
+*Note*: Only available when EC2 instance is running.
+See deployed service [here](http://ec2-34-221-235-141.us-west-2.compute.amazonaws.com:3000/?bookId=4)
 
 ## 1.3 Requirements / Set Up
 **Requirements:**
