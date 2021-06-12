@@ -22,6 +22,7 @@ Technologies Used:
 - Node.js
 - Express
 - MySQL
+- AWS EC2
 
 ![Price Service Demo](./readmeAssets/priceService-demo.png)
 
