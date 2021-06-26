@@ -85,7 +85,25 @@ const createBook = async (price, record) => {
 };
 
 const updatePrice = async (price, record) => {
-
+  console.log('updateprice', price, 'record', record)
+  return price.update(record, {
+    where: {
+      book_id: record.book_id
+    }
+  })
+    .then((res) => {
+      console.log('res', res);
+      if (res[0] === 1) {
+        console.log('Successfully updated price');
+        return res;
+      } else {
+        throw 'error price is the same or doesnt exist'
+      }
+    })
+    .catch((err) => {
+      //console.log('error updating price');
+      return err;
+    })
 }
 
 //createBook(Price, {book_id: 100, book_title: 'test, test, test', price: 100})
@@ -94,5 +112,6 @@ module.exports = {
   findBookTitle,
   findBookId,
   init,
-  createBook
+  createBook,
+  updatePrice
 };

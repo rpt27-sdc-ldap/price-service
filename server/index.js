@@ -56,16 +56,28 @@ app.get('/api/price/:bookTitle', (req, res) => {
 });
 
 app.post('/api/price', (req, res) => {
-  console.log('REQQ', req.query)
+  //console.log('REQQ', req.query)
   const newBook = db.createBook(Price.Price, req.query)
     .then((book) => {
       console.log('saved book to DB successfully');
       res.status(200);
+      res.end();
     })
     .catch((err) => {
       console.error(err);
       res.status(404).send('createBook Failed');
     });
+});
+
+app.patch('/api/price/update', (req, res) => {
+  db.updatePrice(Price.Price, req.query)
+    .then((response) => {
+      console.log('patch response: ', response)
+      res.status(200).send(response);
+    })
+    .catch((err) => {
+      res,status(404).send('Patch Update Price failed', err);
+    })
 });
 
 if (process.env.NODE_ENV !== 'test') {
