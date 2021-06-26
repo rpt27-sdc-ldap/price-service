@@ -12,9 +12,9 @@ const init = async () => {
   // });
 
   const connection = await mysql.createConnection({
-    host: 'ec2-34-221-235-141.us-west-2.compute.amazonaws.com',
-    password: process.env.DB_PASS,
-    user: process.env.DB_USER
+    //host: 'localhost',
+    user: 'root',
+    password: ''
   });
 
   await connection.query('CREATE DATABASE IF NOT EXISTS `audible_price`;');
@@ -23,7 +23,7 @@ const init = async () => {
   //   dialect: 'mysql',
   //   logging: false
   // });
-  const sequelize = new Sequelize('audible_price', process.env.DB_USER, process.env.DB_PASS, {
+  const sequelize = new Sequelize('audible_price', 'root', '', {
     dialect: 'mysql',
     logging: false
   });
