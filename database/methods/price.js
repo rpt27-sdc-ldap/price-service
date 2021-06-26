@@ -1,3 +1,7 @@
+//const db = require('../Models/Price.js');
+const {Price} = require('../index.js');
+console.log('TESTTTTTT', Price);
+
 // =========== METHODS ==============
 const init = async (sequelize, Price) => {
   // seed table with psuedo-random data
@@ -67,8 +71,28 @@ const findBookTitle = async (Price, bookTitle) => {
   }
 };
 
+const createBook = async (price, record) => {
+  //console.log('PRICEEEEE', price, 'record', record)
+  return price.create(record)
+    .then((res) => {
+      console.log('saved new record!');
+      return;
+    })
+    .catch((err) => {
+      console.log('error saving new record');
+      return;
+    });
+};
+
+const updatePrice = async (price, record) => {
+
+}
+
+//createBook(Price, {book_id: 100, book_title: 'test, test, test', price: 100})
+
 module.exports = {
   findBookTitle,
   findBookId,
-  init
+  init,
+  createBook
 };
