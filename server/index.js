@@ -76,7 +76,20 @@ app.patch('/api/price/update', (req, res) => {
       res.status(200).send(response);
     })
     .catch((err) => {
-      res,status(404).send('Patch Update Price failed', err);
+      res.status(404).send('Patch Update Price failed', err);
+    })
+});
+
+app.delete('/api/price/:id', (req, res) => {
+  //console.log('delete req', req)
+  db.deleteRecord(Price.Price, req.params)
+    .then((response) => {
+      console.log('DELETE Response: ', response);
+      res.status(200);
+      res.end();
+    })
+    .catch((err) => {
+      res.status(404).send('DELETE Record Failed', err)
     })
 });
 

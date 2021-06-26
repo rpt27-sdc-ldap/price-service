@@ -103,8 +103,28 @@ const updatePrice = async (price, record) => {
     .catch((err) => {
       //console.log('error updating price');
       return err;
-    })
+    });
 }
+
+const deleteRecord = async (price, id) => {
+  console.log('Deleting Record', price, 'id', id);
+  return price.destroy({
+    where: {book_id: id.id}
+  })
+    .then((res) => {
+      console.log('res', res);
+      if (res === 1) {
+        console.log('Successfully deleted record');
+        return res;
+      } else {
+        throw 'Error deleting record in DB';
+      }
+    })
+    .catch((err) => {
+      //console.log('err', err);
+      return err;
+    });
+};
 
 //createBook(Price, {book_id: 100, book_title: 'test, test, test', price: 100})
 
@@ -113,5 +133,6 @@ module.exports = {
   findBookId,
   init,
   createBook,
-  updatePrice
+  updatePrice,
+  deleteRecord
 };
