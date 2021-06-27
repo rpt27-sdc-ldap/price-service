@@ -25,7 +25,7 @@ class App extends React.Component {
 
   getPrice() {
     let params = document.location.search.substr(1).split('&');
-
+    console.log('param', params)
     // split up parameters into tuples with [key, value] schema
     params.forEach((item, i) => {
       params[i] = item.split('=');
@@ -33,6 +33,7 @@ class App extends React.Component {
 
     // loop through parameters individually
     for (let param of params) {
+      //console.log('param', param)
       if (param[0] === 'bookId' || param[0] === 'bookTitle') {
         fetch(`http://localhost:3000/api/price/${param[1]}`)
           .then(response => response.json())

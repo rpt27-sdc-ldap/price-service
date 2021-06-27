@@ -1,3 +1,7 @@
+//const db = require('../Models/Price.js');
+const {Price} = require('../index.js');
+console.log('TESTTTTTT', Price);
+
 // =========== METHODS ==============
 const init = async (sequelize, Price) => {
   // seed table with psuedo-random data
@@ -67,8 +71,68 @@ const findBookTitle = async (Price, bookTitle) => {
   }
 };
 
+const createBook = async (price, record) => {
+  //console.log('PRICEEEEE', price, 'record', record)
+  return price.create(record)
+    .then((res) => {
+      console.log('saved new record!');
+      return;
+    })
+    .catch((err) => {
+      console.log('error saving new record');
+      return;
+    });
+};
+
+const updatePrice = async (price, record) => {
+  console.log('updateprice', price, 'record', record)
+  return price.update(record, {
+    where: {
+      book_id: record.book_id
+    }
+  })
+    .then((res) => {
+      console.log('res', res);
+      if (res[0] === 1) {
+        console.log('Successfully updated price');
+        return res;
+      } else {
+        throw 'error price is the same or doesnt exist'
+      }
+    })
+    .catch((err) => {
+      //console.log('error updating price');
+      return err;
+    });
+}
+
+const deleteRecord = async (price, id) => {
+  console.log('Deleting Record', price, 'id', id);
+  return price.destroy({
+    where: {book_id: id.id}
+  })
+    .then((res) => {
+      console.log('res', res);
+      if (res === 1) {
+        console.log('Successfully deleted record');
+        return res;
+      } else {
+        throw 'Error deleting record in DB';
+      }
+    })
+    .catch((err) => {
+      //console.log('err', err);
+      return err;
+    });
+};
+
+//createBook(Price, {book_id: 100, book_title: 'test, test, test', price: 100})
+
 module.exports = {
   findBookTitle,
   findBookId,
-  init
+  init,
+  createBook,
+  updatePrice,
+  deleteRecord
 };
