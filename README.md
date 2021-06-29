@@ -37,7 +37,12 @@ Technologies Used:
   - Given a `bookId`, retrieve its price.
 - GET `/api/price/:bookTitle`
   - Given a `bookTitle`, retrieve its price.
-
+- POST `/api/price`
+  - Given a `book_id`, `book_title` and `price`, creates a new record in database.
+- PATCH `/api/price/update`
+  - Given a `book_id` and `price`, updates the price of the matching id.
+- DELETE `/api/price/:id`
+  - Given a `book_id`, deletes the record of matching id.
 
 ### 1.2.2 Deployed Web Address
 *Note*: Only available when EC2 instance is running.
