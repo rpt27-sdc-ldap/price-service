@@ -17,6 +17,7 @@
 
 const faker = require('faker');
 const { Pool } = require('pg');
+const dotenv = require('dotenv');
 
 const pool = new Pool({
   user: 'root',

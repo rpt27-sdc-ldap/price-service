@@ -1,6 +1,5 @@
 //const db = require('../Models/Price.js');
 const {Price} = require('../index.js');
-console.log('TESTTTTTT', Price);
 
 // =========== METHODS ==============
 const init = async (sequelize, Price) => {
@@ -85,14 +84,14 @@ const createBook = async (price, record) => {
 };
 
 const updatePrice = async (price, record) => {
-  console.log('updateprice', price, 'record', record)
+  //console.log('updateprice', price, 'record', record)
   return price.update(record, {
     where: {
       book_id: record.book_id
     }
   })
     .then((res) => {
-      console.log('res', res);
+      //console.log('res', res);
       if (res[0] === 1) {
         console.log('Successfully updated price');
         return res;
