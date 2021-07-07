@@ -5,7 +5,7 @@ const writer = csvWriter();
 
 const generateCSV = () => {
   console.log('Starting CSV generation file');
-  writer.pipe(fs.createWriteStream('postgres.csv'));
+  writer.pipe(fs.createWriteStream('data.csv'));
   for (var i = 0; i < 10000000; i++) {
     writer.write({
       book_id: i,

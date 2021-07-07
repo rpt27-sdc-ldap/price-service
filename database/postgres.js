@@ -1,6 +1,29 @@
-const faker = require('faker');
 const { Pool } = require('pg');
 require('dotenv').config();
+
+// //uncomment to create or delete database
+// const pgtools = require("pgtools");
+// const config = {
+//   user: process.env.DB_USER,
+//   host: "localhost",
+//   password: process.env.POSTGRES_PASS,
+//   port: process.env.POSTGRES_PORT
+// };
+
+// pgtools.dropdb(config, 'SDC', function(err, res) {
+//   if (err) {
+//     console.error(err);
+//   }
+//   console.log(res);
+// })
+
+// pgtools.createdb(config, "SDC", function(err, res) {
+//   if (err) {
+//     console.error(err);
+//     process.exit(-1);
+//   }
+//   console.log('SDC DB Created in Postgres', res);
+// });
 
 const pool = new Pool({
   user: process.env.DB_USER,
@@ -10,10 +33,14 @@ const pool = new Pool({
   port: process.env.POSTGRES_PORT
 });
 
+pool.query('SELECT NOW()', (err, res) => {
+  console.log('connected to postgres1', err, res)
+  //pool.end()
+})
+
 let seedPostgres = async () => {
   let query = `
   DROP TABLE IF EXISTS pricing;
-
   CREATE TABLE pricing (
   book_id SERIAL PRIMARY KEY,
   book_title VARCHAR (50),
@@ -28,21 +55,16 @@ let seedPostgres = async () => {
   console.log('error creating pricing table:', err);
   })
 
-  for (var i = 0; i < 10000000; i++) {
-    let id = i;
-    let title = await faker.lorem.words();
-    let pricing = await faker.finance.amount();
-    console.log('booktitle', title, pricing)
+  let importCsv = `COPY pricing FROM '/Users/denise/HackReactor2/SDC/price-service/database/data.csv' WITH DELIMITER ',' CSV HEADER;`;
 
-    let query = {
-      text: 'INSERT INTO pricing(book_id, book_title, price) VALUES($1, $2, $3)',
-      values: [id, title, pricing],
-    }
-    await pool.query(query)
-      .catch((err) => {
-        console.log(`error saving to DB at ${i}:`, err);
-      })
-  }
+  await pool.query(importCsv)
+   .then((res) => {
+     console.log('Import csv was successful');
+   })
+   .catch((err) => {
+     console.log('error importing csv file:', err);
+   })
+
   console.log('SAVED TO DB SUCCESSFULLY');
 }
 
