@@ -33,7 +33,7 @@ class App extends React.Component {
 
     // loop through parameters individually
     for (let param of params) {
-      //console.log('param', param)
+      console.log('param1', param)
       if (param[0] === 'bookId' || param[0] === 'bookTitle') {
         fetch(`http://localhost:3000/api/price/${param[1]}`)
           .then(response => response.json())
@@ -48,6 +48,7 @@ class App extends React.Component {
           });
       }
     }
+    console.log('this', this.state.currentBook)
   }
 
   componentDidMount() {
