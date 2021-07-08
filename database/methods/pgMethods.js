@@ -30,10 +30,34 @@ const createBook = async (data) => {
       console.log('Successfully Created new Book in pricing');
     })
     .catch((err) => {
-      console.log('error creating new book in pricing');
+      console.log('error creating new book in pricing', err);
+    })
+}
+
+const updatePrice = async (id, price) => {
+  let query = `UPDATE pricing SET price = ${price} WHERE book_id = ${id};`;
+
+  return await pool.query(query)
+    .then(() => {
+      console.log('Successfully updated pricing');
+    })
+    .catch((err) => {
+      console.log('Error updating pricing', err);
+    });
+}
+
+const deleteBook = async (id) => {
+  let query = `DELETE FROM pricing WHERE book_id = ${id};`;
+
+  return await pool.query(query)
+    .then(() => {
+      console.log('Successfully Deleted record');
+    })
+    .catch((err) => {
+      console.log('error deleting record', err);
     })
 }
 
 //getBook(9999999);
 
-module.exports = {getBook, createBook};
+module.exports = {getBook, createBook, updatePrice, deleteBook};

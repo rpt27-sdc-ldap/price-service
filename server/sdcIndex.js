@@ -58,6 +58,32 @@ app.post('/api/price', (req, res) => {
     });
 });
 
+app.patch('/api/price/update', (req, res) => {
+
+  console.log('PATCH', req.query);
+  return pg.updatePrice(req.query.book_id, req.query.price)
+    .then(() => {
+      console.log('PATCH WAS SUCCESSFUL')
+      res.status(200).end();
+    })
+    .catch((err) => {
+      console.log('PATCH WAS UNSUCCESSFUL', err);
+      res.status(404).send('FAILED UPDATING PRICING');
+    });
+});
+
+app.delete('/api/price/:id', (req, res) => {
+  console.log('DELETE', req.params);
+  return pg.deleteBook(req.params.id)
+    .then(() => {
+      console.log('DELETE WAS SUCCESSFUL')
+      res.status(200).end();
+    })
+    .catch((err) => {
+      res.status(404).send('FAILED TO DELETE BOOK', err);
+    })
+});
+
 if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}. CORS enabled for whitelisted IPs listed on https://docs.google.com/document/d/13JU6MtAHHkve1uAwmuhXHuiYZHbYZ7uHa241Jf9lpEA/edit?usp=sharing`);
