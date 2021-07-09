@@ -56,7 +56,6 @@ app.get('/api/price/:bookTitle', (req, res) => {
 });
 
 app.post('/api/price', (req, res) => {
-  //console.log('REQQ', req.query)
   const newBook = db.createBook(Price.Price, req.query)
     .then((book) => {
       console.log('saved book to DB successfully');
@@ -81,7 +80,6 @@ app.patch('/api/price/update', (req, res) => {
 });
 
 app.delete('/api/price/:id', (req, res) => {
-  //console.log('delete req', req)
   db.deleteRecord(Price.Price, req.params)
     .then((response) => {
       console.log('DELETE Response: ', response);
