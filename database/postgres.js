@@ -69,3 +69,5 @@ let seedPostgres = async () => {
 }
 
 seedPostgres();
+
+module.exports = pool;

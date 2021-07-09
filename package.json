@@ -13,7 +13,7 @@
     ]
   },
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "nodemon server/sdcIndex.js",
     "react-dev": "webpack --watch",
     "react-prod": "webpack",
     "server-dev": "nodemon server/index.js",
