@@ -23,6 +23,19 @@ const getBook = async (id) => {
   ;
 }
 
+const getTitle = async (title) => {
+  console.log('READY to find title', title)
+  let query = `SELECT * from pricing WHERE book_title = ${title};`;
+  return await pool.query(query)
+    .then((data) => {
+      //console.log('FOUND TITLE IN PG', data.rows[0]);
+      return data.rows[0];
+    })
+    .catch((err) => {
+      console.log('ERROR Finding Title in PG', err);
+    })
+}
+
 const createBook = async (data) => {
   let query = `INSERT INTO pricing (book_id, book_title, price) VALUES (${data.book_id}, ${data.book_title}, ${data.price});`;
   return await pool.query(query)
@@ -58,6 +71,4 @@ const deleteBook = async (id) => {
     })
 }
 
-//getBook(9999999);
-
-module.exports = {getBook, createBook, updatePrice, deleteBook};
+module.exports = {getBook, createBook, updatePrice, deleteBook, getTitle};

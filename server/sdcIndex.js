@@ -11,8 +11,8 @@ app.use(cors());
 
 app.use(compression());
 app.use(express.static(path.join(__dirname, '..', '/public')));
-//app.use(bodyParser.json());
-//app.use(express.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
   res.end();
@@ -23,30 +23,29 @@ app.get('/api/price/:bookId(\\d+)', (req, res) => {
   let book_id = Number(req.params.bookId);
 
    return pg.getBook(book_id)
-   .then((data) => {
-     //console.log('BOOK', typeof data, data)
-     res.status(200).send(JSON.stringify(data));
-   })
-   .catch((err) => {
-     res.status(404).send('failed to find resource');
-   });
+     .then((data) => {
+       //console.log('BOOK', typeof data, data)
+       res.status(200).send(JSON.stringify(data));
+     })
+     .catch((err) => {
+       res.status(404).send('failed to find resource');
+     });
 });
 
-// app.get('/api/price/:bookTitle', (req, res) => {
-//    console.log('sdc index', req)
-//   // const book = db.findBookTitle(Price.Price, req.params.bookTitle)
-//   //   .then(book => {
-//   //     res.send(JSON.stringify(book.dataValues));
-//   //   })
-//   //   .catch((err) => {
-//   //     console.error(err);
-//   //     res.status(404).send('failed to find resource');
-//   //   });
-// });
+app.get('/api/price/:bookTitle', async (req, res) => {
+   //console.log('sdc index', req.params.bookTitle)
+   return await pg.getTitle(req.params.bookTitle)
+     .then((data) => {
+       console.log('got the title', data)
+       res.status(200).send(JSON.stringify(data));
+     })
+     .catch((err) => {
+       res.status(404).send('Error to find title resource');
+     });
+});
 
 app.post('/api/price', (req, res) => {
-  console.log('POST', req.query);
-
+  //console.log('POST', req.query);
   return pg.createBook(req.query)
     .then(() => {
       //console.log('POST WAS SUCCESSFUL', res);
@@ -59,8 +58,7 @@ app.post('/api/price', (req, res) => {
 });
 
 app.patch('/api/price/update', (req, res) => {
-
-  console.log('PATCH', req.query);
+  //console.log('PATCH', req.query);
   return pg.updatePrice(req.query.book_id, req.query.price)
     .then(() => {
       console.log('PATCH WAS SUCCESSFUL')
@@ -73,7 +71,7 @@ app.patch('/api/price/update', (req, res) => {
 });
 
 app.delete('/api/price/:id', (req, res) => {
-  console.log('DELETE', req.params);
+  //console.log('DELETE', req.params);
   return pg.deleteBook(req.params.id)
     .then(() => {
       console.log('DELETE WAS SUCCESSFUL')
