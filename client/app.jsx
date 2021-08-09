@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Membership from './components/Membership.jsx';
 import PriceButton from './components/PriceButton.jsx';
 

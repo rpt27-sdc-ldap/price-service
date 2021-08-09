@@ -1,9 +1,15 @@
+require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const compression = require('compression');
 const cors = require('cors');
+const cluster = require('cluster');
+const {cpus} = require('os');
+
+const numCPUs = cpus().length;
+
 const port = 3000;
 const pg = require('../database/methods/pgMethods.js');
 
@@ -13,6 +19,8 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, '..', '/public')));
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: true}));
+
+
 
 app.get('/', (req, res) => {
   res.end();
@@ -82,8 +90,21 @@ app.delete('/api/price/:id', (req, res) => {
     })
 });
 
-if (process.env.NODE_ENV !== 'test') {
-  app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}. CORS enabled for whitelisted IPs listed on https://docs.google.com/document/d/13JU6MtAHHkve1uAwmuhXHuiYZHbYZ7uHa241Jf9lpEA/edit?usp=sharing`);
+if (cluster.isPrimary) {
+  console.log(`Primary ${process.pid} is running`);
+
+  // Fork workers.
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+  }
+
+  cluster.on('exit', (worker, code, signal) => {
+    console.log(`worker ${worker.process.pid} died`);
   });
+} else {
+  if (process.env.NODE_ENV !== 'test') {
+    app.listen(port, () => {
+      console.log(`Server running on http://localhost:${port}. CORS enabled for whitelisted IPs listed on https://docs.google.com/document/d/13JU6MtAHHkve1uAwmuhXHuiYZHbYZ7uHa241Jf9lpEA/edit?usp=sharing`);
+    });
+  }
 }

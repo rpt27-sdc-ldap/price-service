@@ -79,6 +79,7 @@
     "fs": "0.0.1-security",
     "jest-fetch-mock": "^3.0.3",
     "mysql2": "^2.2.5",
+    "newrelic": "^8.0.0",
     "nodemon": "^2.0.7",
     "pg": "^8.6.0",
     "pgtools": "^0.3.2",

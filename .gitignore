@@ -1,5 +1,6 @@
 # Security Keys
 *.pem
+newrelic.js
 
 # Logs
 logs
