@@ -34,7 +34,9 @@ class App extends React.Component {
     for (let param of params) {
       console.log('param1', param)
       if (param[0] === 'bookId' || param[0] === 'bookTitle') {
-        fetch(`http://localhost:3000/api/price/${param[1]}`)
+        //http://ec2-54-183-57-133.us-west-1.compute.amazonaws.com
+        //http://localhost:3000/api/price
+        fetch(`http://ec2-54-183-57-133.us-west-1.compute.amazonaws.com/${param[1]}`)
           .then(response => response.json())
           .then(data => {
             console.log('== book data ==>', data);
