@@ -26,10 +26,10 @@ require('dotenv').config();
 // });
 
 const pool = new Pool({
-  user: 'denise',
+  user: 'ubuntu',
   host: 'ec2-3-101-105-97.us-west-1.compute.amazonaws.com',
   database: 'SDC',
-  password: 'root',
+  password: '',
   port: 5432
 });
 
