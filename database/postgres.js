@@ -29,7 +29,7 @@ const pool = new Pool({
   user: 'ubuntu',
   host: 'ec2-3-101-105-97.us-west-1.compute.amazonaws.com',
   database: 'SDC',
-  password: '',
+  password: 'root',
   port: 5432
 });
 
