@@ -26,11 +26,11 @@ require('dotenv').config();
 // });
 
 const pool = new Pool({
-  user: process.env.DB_USER,
+  user: 'denise',
   host: 'ec2-3-101-105-97.us-west-1.compute.amazonaws.com',
   database: 'SDC',
-  password: process.env.POSTGRES_PASS,
-  port: process.env.POSTGRES_PORT
+  password: 'root',
+  port: 5432
 });
 
 pool.query('SELECT NOW()', (err, res) => {
