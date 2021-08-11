@@ -4,7 +4,7 @@ require('dotenv').config();
 const pool = new Pool({
   user: 'ubuntu',
   host: 'ec2-3-101-105-97.us-west-1.compute.amazonaws.com',
-  database: 'SDC',
+  database: 'sdc',
   password: 'root',
   port: 5432
 });
