@@ -36,7 +36,7 @@ class App extends React.Component {
       if (param[0] === 'bookId' || param[0] === 'bookTitle') {
         //http://ec2-54-183-57-133.us-west-1.compute.amazonaws.com
         //http://localhost:3000/api/price
-        fetch(`/api/price/${param[1]}`)
+        fetch(`http://ec2-54-183-57-133.us-west-1.compute.amazonaws.com/api/price/${param[1]}`)
           .then(response => response.json())
           .then(data => {
             console.log('== book data ==>', data);
